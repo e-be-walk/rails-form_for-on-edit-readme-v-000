@@ -827,3 +827,14 @@ ActionController::RoutingError (No route matches [PATCH] "/posts/3"):
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.6ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.5ms)
+
+
+Started PATCH "/posts/3" for 208.103.68.70 at 2018-05-13 22:55:23 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6yovXgj3odfTRYDsJ4LwQIEc0NluRXCmo1ySEfmdvo5CSLUsOHQRLq4aew9tIYQeJX7QQbcI45PGMbVkA5PhSg==", "post"=>{"title"=>"New Post ", "description"=>"great stuff!"}, "commit"=>"Update Post", "id"=>"3"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "New Post "], ["description", "great stuff!"], ["updated_at", "2018-05-13 22:55:23.974783"], ["id", 3]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.130.239:38805/posts/3
+Completed 302 Found in 17ms (ActiveRecord: 4.2ms)
